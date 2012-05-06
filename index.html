@@ -3,6 +3,24 @@ layout: default
 title: Dennis84's Homepage
 ---
 
+<h2>Enable Wlan</h2>
+<p>
+  {% highlight shell %}
+  # Zeige alle devices
+  ifconfig
+  
+  # Wlan karte starten
+  ip link set wlan0 up
+  
+  # WPA Schlüssel
+  mv /etc/wpa_supplicant.conf /etc/wpa_supplicant.conf.original
+  wpa_passphrase AHHA "1234567890" > /etc/wpa_supplicant.conf
+  wpa_supplicant -B -Dwext -i wlan0 -c /etc/wpa_supplicant.conf
+  dhcpcd wlan0
+  ping google.de
+  {% endhighlight %}
+</p>
+
 <h2>Installing Vim</h2>
 <p>
   {% highlight php %}
