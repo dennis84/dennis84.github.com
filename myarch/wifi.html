@@ -1,0 +1,7 @@
+# Die WLAN-Karte starten
+ip link set wlan0 up
+
+mv /etc/wpa_supplicant.conf /etc/wpa_supplicant.conf.original
+wpa_passphrase AHHA "1234567890" > /etc/wpa_supplicant.conf
+wpa_supplicant -B -Dwext -i wlan0 -c /etc/wpa_supplicant.conf
+dhcpcd wlan0

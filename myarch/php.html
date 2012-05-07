@@ -1,0 +1,19 @@
+# Nginx Server installieren.
+pacman -S nginx
+
+# Nginx in den DEAMONS eintragen
+# /etc/rc.conf
+DEAMONS=(.. nginx)
+
+# In der Nginx conf alles Dateien aus sites-enabled importieren.
+include /etc/nginx/sites-enabled/*;
+
+# PHP installieren
+pacman -S php-fpm
+
+# Diese Zeilen kommen in die php.ini um Phar zu erlauben.
+extension=phar.so
+detect_unicode = Off
+phar.readonly = Off
+phar.require_hash = Off
+suhosin.executor.include.whitelist = phar

@@ -1,0 +1,11 @@
+# Einen Benutzer hinzufügen
+useradd -m -g users -G audio,lp,optical,storage,video,wheel,games,power -s /bin/bash dennis
+
+# Infos anlegen
+chfn dennis
+
+# Passwort zuweisen
+passwd dennis
+
+# Root Rechte zuweisen
+# /etc/sudoers -> wheel Gruppe root Rechte freischalten
