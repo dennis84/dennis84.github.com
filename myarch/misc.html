@@ -2,18 +2,27 @@
 de-latin1-nodeadkeys
 
 # Deutsche Loales
-de_DE.UTF-8
+`de_DE.UTF-8`
 
-# Alle de_DE Locales freischalen /etc/locale.gen
-# danach Locales generieren
-locale-gen
+Alle de_DE Locales freischalen /etc/locale.gen
+danach Locales generieren
+`locale-gen`
+
 
 # Diverse Pakete
+```
 pacman -S zsh
 pacman -S net-tools
 pacman -S openssh
 pacman -S chromium
+<<<<<<< HEAD
 pacman -S ranger
 
 # Fonts
 pacman -S ttf-inconsolata
+
+# Ack
+`pacman -S ack`
+Ack executable wird in der Regel im Ordner /usr/share/perl_vendor gespeichert
+Das bedeutet falls noch nicht vorhanden muss der Pfad in die globale Pfad konfiguration
+hinzugefügt werden.
